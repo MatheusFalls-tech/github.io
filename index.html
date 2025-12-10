@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alimenta Curitiba - Plataforma para ONGs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2F855A;
+            --secondary: #38A169;
+            --accent: #ED8936;
+        }
+        body {
+            font-family: 'Nunito', sans-serif;
+            background-color: #F7FAFC;
+        }
+        .hero-pattern {
+            background-image: url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f5f1e377-62e3-46b3-92eb-d123225d9fbd.png'), 
+                             linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .step-circle {
+            width: 40px;
+            height: 40px;
+            border: 2px solid var(--primary);
+        }
+        .food-category {
+            transition: all 0.3s ease;
+        }
+        .food-category:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-12 h-12 rounded-full bg-green-600 flex items-center justify-center text-white font-bold text-2xl mr-3">A</div>
+                <h1 class="text-2xl font-bold text-gray-800">Alimenta Curitiba</h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-gray-700 hover:text-green-600">Sobre</a>
+                <a href="#how-it-works" class="text-gray-700 hover:text-green-600">Como Funciona</a>
+                <a href="#ongs" class="text-gray-700 hover:text-green-600">ONGs</a>
+                <a href="#contact" class="text-gray-700 hover:text-green-600">Contato</a>
+            </nav>
+            <button class="md:hidden text-gray-700">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-pattern py-20 text-white relative">
+        <div class="absolute inset-0 bg-black opacity-40"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-2xl">
+                <div class="relative inline-block">
+                  <h1 class="text-4xl md:text-5xl font-bold mb-6 relative z-10">Conectando ONGs a Alimentos em Curitiba</h1>
+                  <div class="absolute -bottom-2 -right-2 w-24 h-24 rounded-full bg-yellow-400 opacity-20 z-0"></div>
+                  <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/6df05778-ca03-46c0-af13-7489f511f101.png" alt="Ícones de alimentos saudáveis" 
+                       class="absolute -top-3 -left-3 w-20 h-20 object-contain">
+                </div>
+                <p class="text-xl mb-8">Plataforma digital para cadastro de instituições e agendamento seguro de retirada de alimentos excedentes.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#register" class="bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-6 rounded-lg text-center transition duration-300">Cadastre sua ONG</a>
+                    <a href="#schedule" class="bg-white hover:bg-gray-100 text-gray-800 font-bold py-3 px-6 rounded-lg text-center transition duration-300">Agendar Retirada</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Sobre o Projeto</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Redistribuição Eficiente de Alimentos em Curitiba</h3>
+                    <p class="text-gray-600 mb-4">A plataforma Alimenta Curitiba foi desenvolvida para conectar instituições filantrópicas e ONGs com doadores de alimentos excedentes, promovendo uma rede de apoio alimentar mais eficiente e organizada na cidade.</p>
+                    <p class="text-gray-600 mb-6">Nosso objetivo é reduzir o desperdício de alimentos enquanto fortalecemos as instituições que atendem comunidades em situação de vulnerabilidade alimentar em Curitiba.</p>
+                    <div class="flex items-center">
+                        <div class="bg-green-100 p-3 rounded-full mr-4">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                            </svg>
+                        </div>
+                        <p class="text-gray-700">Mais de 50 instituições cadastradas</p>
+                    </div>
+                </div>
+                <div class="bg-gray-100 p-6 rounded-lg">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/dd8d17a6-013f-4159-ae35-9b58ab918946.png" alt="Equipe multidisciplinar trabalhando no projeto Alimenta Curitiba em um escritório moderno" class="rounded-lg shadow-md w-full">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Como Funciona</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto"></div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Step 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="step-circle rounded-full mx-auto mb-4 flex items-center justify-center text-green-600 font-bold">1</div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Cadastro da ONG</h3>
+                    <p class="text-gray-600">Instituições preenchem formulário com informações básicas e documentos comprobatórios de sua atuação em Curitiba.</p>
+                </div>
+                <!-- Step 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="step-circle rounded-full mx-auto mb-4 flex items-center justify-center text-green-600 font-bold">2</div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Validação</h3>
+                    <p class="text-gray-600">Nossa equipe verifica os documentos e aprova o cadastro em até 48 horas, garantindo a idoneidade das organizações.</p>
+                </div>
+                <!-- Step 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-md text-center">
+                    <div class="step-circle rounded-full mx-auto mb-4 flex items-center justify-center text-green-600 font-bold">3</div>
+                    <h3 class="text-xl font-semibold mb-3 text-gray-800">Agendamento</h3>
+                    <p class="text-gray-600">ONGs aprovadas acessam o calendário de doações e agendam a retirada de alimentos em locais e horários disponíveis.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section id="register" class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="bg-green-50 p-8 rounded-lg shadow-md">
+                <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Cadastro de ONG</h2>
+                <form id="ongRegistrationForm">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- Basic Information -->
+                        <div class="space-y-4">
+                            <div>
+                                <label for="ongName" class="block text-gray-700 mb-2">Nome da Instituição*</label>
+                                <input type="text" id="ongName" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                            </div>
+                            <div>
+                                <label for="ongCNPJ" class="block text-gray-700 mb-2">CNPJ*</label>
+                                <input type="text" id="ongCNPJ" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                            </div>
+                            <div>
+                                <label for="ongEmail" class="block text-gray-700 mb-2">E-mail Institucional*</label>
+                                <input type="email" id="ongEmail" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                            </div>
+                        </div>
+                        <!-- Contact Information -->
+                        <div class="space-y-4">
+                            <div>
+                                <label for="ongResponsible" class="block text-gray-700 mb-2">Responsável*</label>
+                                <input type="text" id="ongResponsible" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                            </div>
+                            <div>
+                                <label for="ongPhone" class="block text-gray-700 mb-2">Telefone*</label>
+                                <input type="tel" id="ongPhone" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                            </div>
+                            <div>
+                                <label for="ongDistrict" class="block text-gray-700 mb-2">Bairro em Curitiba*</label>
+                                <select id="ongDistrict" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+                                    <option value="">Selecione...</option>
+                                    <option value="centro">Centro</option>
+                                    <option value="boa-vista">Boa Vista</option>
+                                    <option value="bigorrilho">Bigorrilho</option>
+                                    <option value="portao">Portão</option>
+                                    <option value="santa-felicidade">Santa Felicidade</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Documents -->
+                    <div class="mt-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Documentação Necessária</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-gray-700 mb-2">Anexar CNPJ*</label>
+                                <input type="file" id="cnpjDocument" required class="w-full px-4 py-2 border rounded-lg">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Anexar Estatuto Social*</label>
+                                <input type="file" id="statuteDocument" required class="w-full px-4 py-2 border rounded-lg">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2">Anexar Comprovante de Endereço*</label>
+                                <input type="file" id="addressDocument" required class="w-full px-4 py-2 border rounded-lg">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Areas of Operation -->
+                    <div class="mt-6">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-3">Áreas de Atuação*</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" name="operationAreas" value="combate-fome" class="rounded text-green-600">
+                                <span>Combate à Fome</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" name="operationAreas" value="seguranca-alimentar" class="rounded text-green-600">
+                                <span>Segurança Alimentar</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" name="operationAreas" value="assistencia-social" class="rounded text-green-600">
+                                <span>Assistência Social</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" name="operationAreas" value="educacao" class="rounded text-green-600">
+                                <span>Educação</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" name="operationAreas" value="saude" class="rounded text-green-600">
+                                <span>Saúde</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" name="operationAreas" value="moradia" class="rounded text-green-600">
+                                <span>Moradia</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" name="operationAreas" value="outros" class="rounded text-green-600">
+                                <span>Outros</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Description -->
+                    <div class="mt-6">
+                        <label for="ongDescription" class="block text-gray-700 mb-2">Descreva brevemente sua instituição e o público atendido*</label>
+                        <textarea id="ongDescription" rows="4" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="mt-8">
+                        <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">Enviar Cadastro</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scheduling Section -->
+    <section id="schedule" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Agendamento de Retirada</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">ONGs cadastradas podem agendar a retirada de alimentos excedentes através do nosso sistema transparente e equitativo.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Disponibilidade de Alimentos</h3>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 mb-2">Selecione o tipo de alimento:</label>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="food-category bg-green-50 p-4 rounded-lg cursor-pointer text-center">
+                                <div class="w-12 h-12 mx-auto mb-2">
+                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/dc62d31a-19ab-47ae-aeb7-0d668d3961ec.png" alt="Variedade de frutas frescas" class="w-full h-full object-cover rounded-full">
+                                </div>
+                                <span class="text-gray-800">Frutas</span>
+                            </div>
+                            <div class="food-category bg-green-50 p-4 rounded-lg cursor-pointer text-center">
+                                <div class="w-12 h-12 mx-auto mb-2">
+                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/84fd9bcc-4f3e-456a-822a-b06df7bf3538.png" alt="Legumes e verduras frescos" class="w-full h-full object-cover rounded-full">
+                                </div>
+                                <span class="text-gray-800">Verduras</span>
+                            </div>
+                            <div class="food-category bg-green-50 p-4 rounded-lg cursor-pointer text-center">
+                                <div class="w-12 h-12 mx-auto mb-2">
+                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/76857dc7-9a15-4b88-a092-b81b74d902b4.png" alt="Produtos lácteos diversos" class="w-full h-full object-cover rounded-full">
+                                </div>
+                                <span class="text-gray-800">Laticínios</span>
+                            </div>
+                            <div class="food-category bg-green-50 p-4 rounded-lg cursor-pointer text-center">
+                                <div class="w-12 h-12 mx-auto mb-2">
+                                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/0f17c781-fd88-4d26-9bc6-56974a73d4eb.png" alt="Variedade de pães e massas" class="w-full h-full object-cover rounded-full">
+                                </div>
+                                <span class="text-gray-800">Pães</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 mb-2">Selecione o ponto de retirada:</label>
+                        <select class="w-full px-4 py-2 border rounded-lg">
+                            <option>Centro de Distribuição Central - Centro</option>
+                            <option>Associação Comercial - Água Verde</option>
+                            <option>Casa do Voluntário - Batel</option>
+                            <option>Banco de Alimentos - Cajuru</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 mb-2">Selecione a data:</label>
+                        <input type="date" class="w-full px-4 py-2 border rounded-lg">
+                    </div>
+                    
+                    <div class="mb-6">
+                        <label class="block text-gray-700 mb-2">Horários disponíveis:</label>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button class="py-2 px-2 border rounded-lg hover:bg-green-100">08:00</button>
+                            <button class="py-2 px-2 border rounded-lg hover:bg-green-100">09:00</button>
+                            <button class="py-2 px-2 border rounded-lg hover:bg-green-100">10:00</button>
+                            <button class="py-2 px-2 border rounded-lg hover:bg-green-100">14:00</button>
+                            <button class="py-2 px-2 border rounded-lg hover:bg-green-100">15:00</button>
+                            <button class="py-2 px-2 border rounded-lg hover:bg-green-100">16:00</button>
+                        </div>
+                    </div>
+                    
+                    <button class="w-full bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                        Confirmar Agendamento
+                    </button>
+                </div>
+                
+                <div>
+                    <div class="mb-8">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/5d22b9cb-2688-4500-a903-9d07df7e78e0.png" alt="Voluntários de ONG recebendo alimentos em centro de distribuição em Curitiba" class="rounded-lg shadow-md w-full">
+                    </div>
+                    <div class="bg-white p-6 rounded-lg shadow-md">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Regras para Retirada</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 h-5 w-5 text-green-500 mr-2">✓</div>
+                                <span class="text-gray-700">Apresentar documento de identificação no dia da retirada</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 h-5 w-5 text-green-500 mr-2">✓</div>
+                                <span class="text-gray-700">Respeitar rigorosamente o horário agendado</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 h-5 w-5 text-green-500 mr-2">✓</div>
+                                <span class="text-gray-700">Trazer recipientes adequados para transporte</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 h-5 w-5 text-green-500 mr-2">✓</div>
+                                <span class="text-gray-700">Limite semanal de retirada proporcional ao tamanho da instituição</span>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0 h-5 w-5 text-green-500 mr-2">✓</div>
+                                <span class="text-gray-700">Comprovar a distribuição dos alimentos quando solicitado</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NGOs Map Section -->
+    <section id="ongs" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">ONGs Cadastradas</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto"></div>
+                <p class="text-gray-600 max-w-2xl mx-auto mt-4">Conheça algumas das instituições que já fazem parte da nossa rede em Curitiba.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- NGO Card 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 card-hover transition duration-300">
+                    <div class="card-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9e3ad0f7-a987-444e-825c-114372739d19.png" alt="Fachada da Casa do Caminho, ONG que atende crianças no Capão da Imbuia" class="w-full h-48 object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Casa do Caminho</h3>
+                        <p class="text-gray-600 mb-4">Atendimento a crianças e adolescentes em situação de vulnerabilidade no Capão da Imbuia.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Capão da Imbuia, Curitiba
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- NGO Card 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden border border-gray-100 card-hover transition duration-300">
+                    <div class="card-image">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c939e8cd-dc48-40cb-8f25-e163b8294e94.png" alt="Voluntários organizando alimentos no Banco de Alimentos do Cajuru" class="w-full h-48 object-cover" />
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Banco de Alimentos</h3>
+                        <p class="text-gray-600 mb-4">Distribuição de alimentos para famílias em situação de insegurança alimentar no Cajuru.</p>
+                        <div class="flex items-center text-sm text-gray-500">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            Cajuru, Curitiba
+                        </div>
+                    </div>
+                </div>
+                
+               
+            
+            <div class="text-center mt-8">
+                <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg inline-flex items-center transition duration-300">
+                    Ver todas as ONGs
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Form Section -->
+    <section id="donation" class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Formulário de Doação de Alimentos</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto"></div>
+                <p class="text-gray-600 mt-4">Preencha este formulário para nos ajudar a entender melhor suas intenções de doação</p>
+            </div>
+
+            <div class="bg-green-50 p-8 rounded-lg shadow-md">
+                <form id="foodDonationForm">
+                    <!-- Food Type -->
+                    <div class="mb-6">
+                        <label class="block text-gray-700 mb-2">Qual tipo de alimento você pode doar?</label>
+                        <div class="grid md:grid-cols-3 gap-4 mt-2">
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" name="foodType" value="graos" class="rounded text-green-600">
+                                <span>Grãos (arroz, feijão, etc)</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" name="foodType" value="hortifruti" class="rounded text-green-600">
+                                <span>Hortifruti</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" name="foodType" value="laticinios" class="rounded text-green-600">
+                                <span>Laticínios</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" name="foodType" value="enlatados" class="rounded text-green-600">
+                                <span>Enlatados</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" name="foodType" value="assados" class="rounded text-green-600">
+                                <span>Pães/bolos</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" name="foodType" value="outros" class="rounded text-green-600">
+                                <span>Outros</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Quantity -->
+                    <div class="mb-6">
+                        <label class="block text-gray-700 mb-2">Quantidade aproximada (em kg)</label>
+                        <input type="number" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500">
+                    </div>
+
+                    <!-- Frequency -->
+                    <div class="mb-6">
+                        <label class="block text-gray-700 mb-2">Com que frequência pode doar?</label>
+                        <select class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500">
+                            <option>Única vez</option>
+                            <option>Semanalmente</option>
+                            <option>Quinzenalmente</option>
+                            <option>Mensalmente</option>
+                            <option>Outra</option>
+                        </select>
+                    </div>
+
+                    <!-- Transport -->
+                    <div class="mb-6">
+                        <label class="block text-gray-700 mb-2">Necessita de coleta ou pode entregar?</label>
+                        <select class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500">
+                            <option>Preciso de coleta</option>
+                            <option>Posso entregar</option>
+                        </select>
+                    </div>
+
+                    <!-- Message -->
+                    <div class="mb-6">
+                        <label class="block text-gray-700 mb-2">Alguma informação adicional que gostaria de compartilhar?</label>
+                        <textarea rows="3" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500"></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
+                        Enviar Formulário
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dons Section -->
+    <section class="py-16 bg-green-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Seja um Doador</h2>
+                    <p class="text-lg mb-8">Empresas e estabelecimentos podem cadastrar alimentos excedentes para doação através da nossa plataforma.</p>
+                    <div class="flex space-x-4">
+                        <button class="bg-white hover:bg-gray-100 text-green-600 font-bold py-3 px-6 rounded-lg transition duration-300">
+                            Cadastre-se como doador
+                        </button>
+                        <button class="border-2 border-white hover:bg-white hover:text-green-600 font-bold py-3 px-6 rounded-lg transition duration-300">
+                            Saiba mais
+                        </button>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-white bg-opacity-20 p-6 rounded-lg text-center">
+                        <div class="text-3xl font-bold mb-2">200+</div>
+                        <div class="text-sm">DOADORES</div>
+                    </div>
+                    <div class="bg-white bg-opacity-20 p-6 rounded-lg text-center">
+                        <div class="text-3xl font-bold mb-2">50+</div>
+                        <div class="text-sm">INSTITUIÇÕES</div>
+                    </div>
+                    <div class="bg-white bg-opacity-20 p-6 rounded-lg text-center">
+                        <div class="text-3xl font-bold mb-2">2.5T</div>
+                        <div class="text-sm">ALIMENTOS/MÊS</div>
+                    </div>
+                    <div class="bg-white bg-opacity-20 p-6 rounded-lg text-center">
+                        <div class="text-3xl font-bold mb-2">5K</div>
+                        <div class="text-sm">PESSOAS ATENDIDAS</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Contato</h2>
+                <div class="w-20 h-1 bg-green-600 mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Entre em contato</h3>
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 mb-2">Nome</label>
+                            <input type="text" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">E-mail</label>
+                            <input type="email" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Assunto</label>
+                            <select class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500">
+                                <option>Dúvidas sobre cadastro</option>
+                                <option>Agendamento</option>
+                                <option>Parcerias</option>
+                                <option>Voluntariado</option>
+                                <option>Outros</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2">Mensagem</label>
+                            <textarea rows="4" class="w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-green-500"></textarea>
+                        </div>
+                        <button class="bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+                
+                <div>
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold mb-4 text-gray-800">Informações</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 h-6 w-6 text-green-600 mr-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Endereço</h4>
+                                    <p class="text-gray-600">Rua XV de Novembro, 123 - Centro, Curitiba - PR</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 h-6 w-6 text-green-600 mr-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Telefone</h4>
+                                    <p class="text-gray-600">(41) 3212-4567</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 h-6 w-6 text-green-600 mr-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">E-mail</h4>
+                                    <p class="text-gray-600">contato@alimentacuritiba.org.br</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 h-6 w-6 text-green-600 mr-3">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Horário de Atendimento</h4>
+                                    <p class="text-gray-600">Segunda à sexta, das 8h às 18h</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-8 rounded-lg overflow-hidden">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9c312690-b38f-4b78-90e7-386f12f338de.png" alt="Mapa da localização do escritório da Alimenta Curitiba no centro da cidade" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center text-white font-bold text-xl mr-3">A</div>
+                        <h3 class="text-xl font-bold">Alimenta Curitiba</h3>
+                    </div>
+                    <p class="text-gray-400">Conectando ONGs a alimentos excedentes para combater a fome na nossa cidade.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#about" class="text-gray-400 hover:text-white">Sobre</a></li>
+                        <li><a href="#how-it-works" class="text-gray-400 hover:text-white">Como Funciona</a></li>
+                        <li><a href="#register" class="text-gray-400 hover:text-white">Cadastro</a></li>
+                        <li><a href="#schedule" class="text-gray-400 hover:text-white">Agendamento</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">ONGs Parceiras</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white">Banco de Alimentos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Casa do Caminho</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">São Vicente de Paulo</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white">Tem Quem Queira</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Redes Sociais</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.007 2.007 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.007 2.007 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31.4 31.4 0 0 1 0 7.68v-.122C.002 7.343.01 6.6.064 5.78l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.007 2.007 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A99.788 99.788 0 0 1 7.858 2h.193zM6.4 5.209v4.818l4.157-2.408L6.4 5.209z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center hover:bg-green-600">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16c2.173 0 2.445-.01 3.298-.048.851-.04 1.534-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8c0-2.172-.01-2.444-.048-3.297-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 8 0zm0 5a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>© 2023 Alimenta Curitiba. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handling
+        document.getElementById('ongRegistrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const ongName = document.getElementById('ongName').value;
+            const ongCNPJ = document.getElementById('ongCNPJ').value;
+            const ongEmail = document.getElementById('ongEmail').value;
+            
+            if (!ongName || !ongCNPJ || !ongEmail) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                return;
+            }
+            
+            // Here you would typically send the data to a server
+            alert('Cadastro enviado com sucesso! Nossa equipe entrará em contato em até 48 horas para validar sua instituição.');
+            this.reset();
+        });
+        
+        // Food category selection
+        const foodCategories = document.querySelectorAll('.food-category');
+        foodCategories.forEach(category => {
+            category.addEventListener('click', function() {
+                foodCategories.forEach(c => c.classList.remove('bg-green-200', 'border-green-600'));
+                this.classList.add('bg-green-200', 'border-green-600');
+            });
+        });
+        
+        // Time slot selection
+        const timeSlots = document.querySelectorAll('button[class*="hover:bg-green-100"]');
+        timeSlots.forEach(slot => {
+            slot.addEventListener('click', function(e) {
+                e.preventDefault();
+                timeSlots.forEach(s => s.classList.remove('bg-green-600', 'text-white', 'hover:bg-green-600'));
+                this.classList.add('bg-green-600', 'text-white', 'hover:bg-green-600');
+            });
+        });
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuButton = document.querySelector('.md\\:hidden');
+        mobileMenuButton.addEventListener('click', function() {
+            const nav = document.querySelector('nav');
+            nav.classList.toggle('hidden');
+        });
+
+        // Donation form handling
+        document.getElementById('foodDonationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Basic validation
+            const foodTypes = document.querySelectorAll('input[name="foodType"]:checked');
+            
+            if (foodTypes.length === 0) {
+                alert('Por favor selecione pelo menos um tipo de alimento');
+                return;
+            }
+            
+            alert('Obrigado pelo seu interesse em doar! Em breve nossa equipe entrará em contato.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+
+2. Update the JavaScript to handle dynamic URL sharing:
+
+```html
+```diff
+<<<<<<< SEARCH
+        });
+    </script>
+=======
+        });
+
+        // Share functions
+        function getShareURL() {
+            return window.location.href; // Gets current page URL
+        }
+
+        function updateShareLinks() {
+            const url = encodeURIComponent(getShareURL());
+            const facebookLinks = document.querySelectorAll('a[href*="facebook.com/sharer"]');
+            const twitterLinks = document.querySelectorAll('a[href*="twitter.com/intent"]');
+            const whatsappLinks = document.querySelectorAll('a[href*="whatsapp://send"]');
+
+            facebookLinks.forEach(link => {
+                link.href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+            });
+            twitterLinks.forEach(link => {
+                link.href = `https://twitter.com/intent/tweet?url=${url}&text=Conheça a plataforma Alimenta Curitiba`;
+            });
+            whatsappLinks.forEach(link => {
+                link.href = `whatsapp://send?text=Conheça a plataforma Alimenta Curitiba: ${url}`;
+            });
+        }
+
+        // Update share links on page load
+        document.addEventListener('DOMContentLoaded', updateShareLinks);
+    </script>
+>>>>>>> REPLACE
